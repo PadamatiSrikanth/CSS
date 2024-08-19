@@ -22,6 +22,11 @@ variables
   --spacing: 0.25rem;
   --radius: 0.5rem;
 }
+/*
+===============
+global style
+===============
+*/
 
 * {
   margin: 0;
@@ -95,9 +100,7 @@ p {
     line-height: 1;
   }
 }
-/*
-global styles
-*/
+
 .btn {
   text-transform: uppercase;
   background: var(--clr-primary);
@@ -117,6 +120,19 @@ global styles
   color: var(--clr-primary);
   background: var(--clr-secondary);
 }
+
+.clearfix::after,
+.clarfix::before {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+/*
+===============
+header
+===============
+*/
 
 .header {
   min-height: 100vh;
@@ -164,4 +180,54 @@ global styles
     #e9b949,
     var(--clr-primary)
   );
+}
+
+/*
+===============
+skills section
+===============
+*/
+
+.skills {
+  background: var(--clr-grey-10);
+}
+.skill {
+  padding: 2.5rem 0;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  color: var(--clr-primary);
+  transition: var(--transition);
+}
+.skill-text {
+  color: var(--clr-grey-5);
+  max-width: 17rem;
+  margin: 0 auto;
+}
+
+.skill:hover {
+  background: var(--clr-white);
+  box-shadow: 0 2px var(--clr-primary);
+}
+
+.skill:hover .skill-icon {
+  transform: translateY(-5px);
+}
+
+@media screen and (min-width: 576px) {
+  .skill {
+    float: left;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .skill {
+    width: 25%;
+  }
 }
